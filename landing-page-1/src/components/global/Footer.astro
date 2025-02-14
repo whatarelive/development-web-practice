@@ -1,0 +1,103 @@
+---
+import Image from "astro/components/Image.astro"
+
+const footerLinks = [
+    {
+        name: 'Categories',
+        links: ['User Interface', 'User Experience', 'Digital Media', 'LifeStyle', 'Programming', 'Animation'],
+    },
+    {
+        name: 'Product',
+        links: ['Pricing', 'Overview', 'Browse', 'Accessibility', 'Five', 'Changelog'],
+    },
+    {
+        name: 'Solutions',
+        links: ['Brainstorming', 'Ideation', 'WireFraming', 'Research', 'Design', 'Concept'],
+    },
+    {
+        name: 'Resources',
+        links: ['Help Center', 'Blog', 'Tutorials', 'FAQs', 'Community', 'Events'],
+    },
+    {
+        name: 'Support',
+        links: ['Contact Us', 'Developers', 'Documentation', 'Integrations', 'Reports', 'Webinar'],
+    },
+    {
+        name: 'Company',
+        links: ['About', 'Press', 'Events', 'Careers', 'Customers', 'Partners'],
+    }
+]
+
+const linksSocialsWebs = [{
+    url: "https://www.youtube.com/",
+    icon: "/svgs/youtube.svg",
+},{
+    url: "https://www.facebook.com/",
+    icon: "/svgs/facebook.svg",
+},{
+    url: "https://www.twitter.com/",
+    icon: "/svgs/twitter.svg",
+},{
+    url: "https://www.instagram.com/",
+    icon: "/svgs/instagram.svg",
+},{
+    url: "https://www.linkedin.com/",
+    icon: "/svgs/linkedin.svg",
+}] 
+---
+
+<footer class="px-4 lg:px-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-6 py-6 border-b border-gray-300">
+        {
+            footerLinks.map((link) => (
+                <div>
+                    <h4 class="py-3 font-semibold text-gray-600">
+                        { link.name }
+                    </h4>
+
+                    <ul class="flex flex-col">
+                    {
+                        link.links.map((href) => (    
+                            <a 
+                                href={`/${href.toLowerCase()}`} target="_blank" 
+                                class="py-3 text-gray-500"
+                            >
+                                { href }
+                            </a>
+                        ))
+                    }
+                    </ul>
+                </div>
+            ))
+        }
+    </div>
+    <div class="flex flex-col md:flex-row md:justify-between gap-4 py-6">
+        <div class="md:inline-flex md:items-center md:gap-2">
+            <a 
+                href="#home" target="_self"
+                class="text-xl font-semibold cursor-pointer"
+            >
+                break<span class="text-fuchsia-700">io</span>
+            </a>
+    
+            <p class="text-gray-600 mt-4 md:mt-0">
+                @ 2023 - All rights reserved
+            </p>
+        </div>
+
+        <div class="flex gap-4">
+            {
+                linksSocialsWebs.map(({ icon, url }) => (
+                    <a href={url} target="_blank" class="cursor-pointer">
+                        <Image 
+                            src={icon} 
+                            alt={`Icon of ${url}`} 
+                            width={24} 
+                            height={24} 
+                        />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</footer>
