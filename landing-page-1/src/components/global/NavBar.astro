@@ -1,0 +1,40 @@
+---
+import Image from "astro/components/Image.astro";
+
+const links = ["Explore", "Solutions", "About", "Blog", "Log In"];
+---
+
+<header class="flex p-4 items-center justify-between md:py-6 md:px-20 select-none">
+    <a 
+        href="#home" target="_self"
+        class="text-3xl font-bold"
+    >
+        break<span class="text-fuchsia-700">io</span>
+    </a>
+
+    <nav class="hidden md:flex gap-4">
+        {links.map((link) => (
+            <a 
+                href={link.toLowerCase().replace(" ", "")} target="_self"
+                class="px-2 py-3 font-medium text-gray-900 hover:text-fuchsia-600 hover:underline transition-all">
+                { link }
+            </a>
+        ))}
+
+        <a 
+            href="/startnow" target="_self" 
+            class="w-32 p-3 border rounded-[18px] bg-fuchsia-600 border-fuchsia-600 text-center text-white 
+            font-medium hover:bg-white hover:text-fuchsia-600 transition-all"
+            >   
+            Start Now
+        </a>
+    </nav>
+
+    <Image 
+        src="/svgs/buttons_group.svg" 
+        alt="Icono menu mobile" 
+        width={24} 
+        height={24}
+        class="md:hidden"
+    />
+</header>
