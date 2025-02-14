@@ -1,0 +1,64 @@
+---
+import Image from "astro/components/Image.astro"
+
+const tools = [{
+    icon: "/svgs/tools0.svg",
+    title: "Sapien amet est",
+    subtitle: "Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor et."
+},{
+    icon: "/svgs/tools1.svg",
+    title: "Tortor ornare",
+    subtitle: "Nulla etiam mattis amet suspendisse lacus nulla sed urna ultricies. "
+},{
+    icon: "/svgs/tools2.svg",
+    title: "Vel lacus",
+    subtitle: "Porttitor quis lectus varius quis dolor morbi massa pellentesque."
+},{
+    icon: "/svgs/tools3.svg",
+    title: "Hendrerit blandit",
+    subtitle: "A aliquam pharetra in nec vitae ultrices commodo placerat eget."
+},{
+    icon: "/svgs/tools4.svg",
+    title: "Enim risus turpis",
+    subtitle: "Tristique dui vestibulum senectus ac duis etiam adipiscing sapien."
+},{
+    icon: "/svgs/tools5.svg",
+    title: "Aliquam lorem et",
+    subtitle: "Suspendisse ultrices morbi iaculis sit lorem. Mauris nulla odio est a mi a sed gravida."
+},{
+    icon: "/svgs/tools6.svg",
+    title: "Sed aliquam lectus",
+    subtitle: "Rhoncus ut montes quis eget vulputate. Id hac consectetur ornare neque."
+},{
+    icon: "/svgs/tools7.svg",
+    title: "Cursus diam",
+    subtitle: "Feugiat consectetur eu commodo odio venenatis pretium libero. Volutpat ultricies nisl turpis id."
+},{
+    icon: "/svgs/tools8.svg",
+    title: "Facilisi vel malesuada",
+    subtitle: "Nibh cursus ultricies id neque proin urna vivamus bibendum. Quam sit platea integer sit."
+}]
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1280px]">
+    {
+        tools.map(({ icon, title, subtitle }) => (
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <Image 
+                    src={`${icon}`} 
+                    alt={`Icon of ${title}`} 
+                    width={64} 
+                    height={64}
+                />
+
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">
+                    { title }
+                </h3>
+
+                <p class="text-center md:text-start text-sm sm:text-[18px] text-gray-600">
+                    { subtitle }
+                </p>
+            </div>
+        ))
+    }
+</div>

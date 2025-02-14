@@ -2,6 +2,7 @@
 import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
 import HeroForm from "../components/home/HeroForm.astro";
+import ToolsList from "../components/home/ToolsList.astro";
 ---
 
 <Layout>
@@ -74,5 +75,23 @@ import HeroForm from "../components/home/HeroForm.astro";
             height={830} 
             class="hidden md:block"
         />
+    </section>
+
+    {/** Favorite Toos View */}
+    <section class="flex flex-col items-center gap-8 py-12 px-4 select-none">
+        <div class="flex flex-col gap-6 items-center max-w-[900px]">
+            <h2 class="text-xl sm:text-2xl xl:text-[56px] font-bold xl:font-extrabold bg-gradient-to-r from-fuchsia-600 
+                to-fuchsia-800 bg-clip-text text-transparent"
+            >
+                Your favourite tools
+            </h2>
+
+            <p class="text-xs xl:text-xl text-center">
+                In risus nec molestie at in pulvinar tellus. At integer id condimentum gravida nisi nisl. Sem vitae porttitor 
+                arcu congue sem erat et sit faucibus. Sollicitudin elit gravida tellus mattis porttitor.
+            </p>
+        </div>
+
+        <ToolsList/>
     </section>
 </Layout>
