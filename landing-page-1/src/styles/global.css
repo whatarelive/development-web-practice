@@ -7,3 +7,8 @@ body {
 section, header, footer {
     width: 100%;
 }
+
+.link-button {
+    @apply w-36 p-3 border rounded-[19px] cursor-pointer bg-fuchsia-600 border-fuchsia-600 text-center 
+    text-white font-medium hover:bg-white hover:text-fuchsia-600 transition-all 
+}

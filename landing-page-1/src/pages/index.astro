@@ -1,8 +1,78 @@
 ---
+import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
-import HeroView from "../views/home/HeroView.astro";
+import HeroForm from "../components/home/HeroForm.astro";
 ---
 
 <Layout>
-   <HeroView/>
+    { /** Hero View */ }
+    <section class="flex flex-col items-center gap-8 px-4 py-12 select-none">
+        <div class="flex flex-col gap-6 items-center">
+            <div class="space-y-6">
+                <h1 class="text-2xl font-bold text-center bg-gradient-to-r from-fuchsia-600 to-fuchsia-800 bg-clip-text 
+                    text-transparent sm:text-3xl xl:text-[72px] xl:font-extrabold"
+                >
+                    It’s time to take a break
+                </h1>
+    
+                <p class="text-xs text-center text-gray-600 sm:text-base xl:text-xl">
+                    Build your meditation skills with an app that gives you all you need!
+                </p>
+            </div>
+    
+            <HeroForm/>
+        </div>
+    
+        <Image 
+            src="/images/picture1_mobile.jpg" 
+            alt="Team Picture" 
+            width={361} 
+            height={222}
+            class="md:hidden"
+        />
+    
+        <Image 
+            src="/images/picture1_desktop.jpg" 
+            alt="Team Picture" 
+            width={1280} 
+            height={465}
+            class="hidden xl:block"
+        />
+    </section>
+
+    { /** Product Interface View */ }
+    <section class="flex flex-col items-center gap-8 py-12 px-4 select-none">
+        <div class="flex flex-col gap-6 items-center max-w-[900px]">
+            <h2 class="text-xl sm:text-2xl xl:text-[56px] font-bold xl:font-extrabold bg-gradient-to-r from-fuchsia-600 
+            to-fuchsia-800 bg-clip-text text-transparent"
+            >
+                Get better everyday
+            </h2>
+
+            <p class="text-xs xl:text-xl text-center">
+                Et pulvinar nec interdum integer id urna molestie porta nullam. A, donec ornare sed turpis 
+                pulvinar purus maecenas quam a. Erat porttitor pharetra sed in mauris elementum sollicitudin.
+            </p>
+
+            <a href="/startnow" target="_self" class="link-button">
+                Start Now
+            </a>
+        </div>
+
+        <Image 
+            src="/images/picture2_mobile.jpg" 
+            alt="Product Interface Image Mobile" 
+            width={361} 
+            height={647} 
+            class="md:hidden"
+        />
+
+        <Image 
+            src="/images/picture2_desktop.jpg" 
+            alt="Product Interface Image Desktop" 
+            width={1280} 
+            height={830} 
+            class="hidden md:block"
+        />
+    </section>
 </Layout>
